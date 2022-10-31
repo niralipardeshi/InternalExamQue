@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Data</title>
+</head>
+
+<body>
+    <h2> Add vehicle Data</h2>
+    <form method="post" action="/save" enctype="multipart/form-data">
+        <lable>vehicle brand</lable>
+        <input type="text" name="vehicle_brand"><br>
+        <lable>category_name</lable>    
+        <select name="category_name">
+            <% catData.forEach(function(cd){ %>                           
+                <option value="<%= cd.category_name %>"><%= cd.category_name %></option>
+            <% }) %>           
+        </select><br>
+        <lable>picture</lable>
+        <input type="file" name="file"><br>
+        <lable>price</lable>
+        <input type="number" name="price"><br>
+        <lable>no_of_year</lable>
+        <input type="number" name="no_of_year"><br>
+        <!-- <lable>depriciation</lable> -->
+        <input type="number" hidden name="depriciation"><br>        
+        <!-- <lable>total_price</lable> -->
+        <input type="number" hidden name="total_price"><br>
+        <button type="submit">Add</button>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+<!-- <form method="get" action="/cat"> -->
+<label>Category</label>
+
+<select name="category_name" id="category_name">
+    <% cate.forEach(function(cat){ %>
+        <!-- <option value="abc">abc</option> -->
+        <option value="<%= cat.category_name %>"><%= cat.category_name %></option>
+    <% }) %>
+</select>
+<!-- </form> -->

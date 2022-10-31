@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>list of vehicle</title>
+</head>
+<body>
+    <a href="/add"> ADD</a><br>
+    <a href="/cat"> Category</a><br>
+    <a href="/"> Home</a>
+    <table border="1">
+        <thead>
+            <tr>
+              <th>vehicle brand</th>
+                <th>category_name</th>
+                <th>picture</th>
+                <th>price</th>
+                <th>depriciation</th>
+                <th>no_of_year</th>
+                <th>total_price</th>
+            </tr>            
+        </thead>
+        <tbody>
+           <% data.forEach(function(d){ %>            
+            <tr>
+                <td><%= d.vehicle_brand %></td>
+                <td><%= d.category_name %></td>                
+                <td><img src="<%= d.picture %>" width="50"></td>
+                <td><%= d.price %></td>
+                <td><%= d.depriciation %></td>
+                <td><%= d.no_of_year %></td>
+                <td><%= d.total_price %></td>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>
